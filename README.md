@@ -1,46 +1,67 @@
-# Sistema de Gestión de Contenidos Audiovisuales (Java MVC)
+# 💣 Buscaminas (Minesweeper) - Java Console Edition
 
-Este proyecto es una aplicación de consola en Java diseñada para gestionar una biblioteca de contenidos audiovisuales (Películas, Series y Documentales). Implementa persistencia de datos mediante archivos CSV y sigue estrictos principios de diseño de software.
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
-## 🚀 Características
+## 📖 Descripción del Proyecto
 
-* **CRUD Completo:** Permite agregar y listar contenidos.
-* **Persistencia:** Los datos se guardan automáticamente en `contenidos.csv`.
-* **Arquitectura MVC:** Separación clara entre Modelo, Vista y Controlador.
-* **Principios SOLID:** Código modular, extensible y fácil de mantener.
-* **Tests Unitarios:** Verificación de lógica con JUnit 5.
+Este proyecto es una implementación del clásico juego **Buscaminas** desarrollado en Java para ejecutarse en consola. El objetivo principal es aplicar conceptos avanzados de **Programación Orientada a Objetos (POO)**, patrones de diseño y buenas prácticas de desarrollo de software.
 
-## 🛠️ Estructura del Proyecto
+El juego consiste en un tablero de **10x10 casillas** con **10 minas** ocultas. El jugador debe descubrir las casillas seguras mediante coordenadas y lógica, evitando detonar las minas.
 
-El código está organizado en paquetes bajo `src/uni1a/`:
+## 🚀 Características Técnicas
 
-* `modelo/`: Contiene las entidades (`Pelicula`, `SerieDeTV`, etc.) y la lógica de negocio.
-* `vista/`: Interfaz de usuario en consola (`ConsolaVista`).
-* `controlador/`: Coordina la interacción entre el usuario y el sistema (`AudioVisualController`).
-* `persistencia/`: Maneja la lectura y escritura de archivos (`GestorArchivos`).
-* `test/`: Pruebas unitarias (`TestAudioVisual`).
+El desarrollo cumple con los siguientes requerimientos técnicos y de diseño:
 
-## 📋 Pre-requisitos
+* **Arquitectura MVC:** Separación clara entre **Modelo** (Lógica), **Vista** (Consola) y **Controlador** (Flujo del juego).
+* **POO Avanzada:** Uso de Herencia, Polimorfismo, Encapsulamiento y Relaciones entre clases.
+* **Manejo de Excepciones:**
+    * Control de errores estándar (`InputMismatchException`, `ArrayIndexOutOfBoundsException`).
+    * Excepciones personalizadas (ej. `CasillaYaDescubiertaException`).
+* **Persistencia de Datos:** Capacidad para guardar y cargar la partida (Serialización/Archivos de texto).
+* **Código Limpio:** Aplicación de principios DRY, KISS y refactorización.
+* **Testing:** Pruebas unitarias (TDD) para validar la lógica del núcleo.
 
-* Java Development Kit (JDK) 8 o superior.
-* Eclipse IDE (o cualquier otro IDE Java).
-* Librería JUnit 5 (para ejecutar pruebas).
+## 🛠️ Requisitos Previos
 
-## 🔧 Cómo ejecutar
+* **Java Development Kit (JDK):** Versión 11 o superior.
+* **Git:** Para el control de versiones.
+* **IDE Recomendado:** IntelliJ IDEA, Eclipse o NetBeans.
 
-1.  Clonar este repositorio.
-2.  Importar el proyecto en Eclipse.
-3.  Navegar a `src/uni1a/Main.java`.
-4.  Ejecutar como **Java Application**.
+## 🔧 Instalación y Ejecución
 
-## 🧪 Cómo ejecutar las pruebas
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone [https://github.com/](https://github.com/)[TU_USUARIO]/[NOMBRE_DEL_REPO].git
+    ```
 
-1.  Navegar a la carpeta `src/uni1a/test/`.
-2.  Hacer clic derecho en `TestAudioVisual.java`.
-3.  Seleccionar **Run As > JUnit Test**.
+2.  **Compilar el proyecto:**
+    Navega a la carpeta raíz (`src`) y compila los archivos `.java`:
+    ```bash
+    javac -d ../bin Main.java
+    ```
 
-## 📝 Cambios Realizados (Refactorización)
+3.  **Ejecutar el juego:**
+    ```bash
+    java -cp ../bin Main
+    ```
 
-* **Código Limpio:** Se mejoraron los nombres de variables y métodos para mayor claridad.
-* **SRP:** Se separó la lógica de archivos de las clases de entidad.
-* **Persistencia:** Se implementó lectura/escritura robusta con `BufferedReader`.
+## 🎮 Instrucciones de Uso
+
+### Interfaz del Tablero
+El tablero se muestra con coordenadas:
+* **Filas:** Letras (A - J)
+* **Columnas:** Números (1 - 10)
+* **Símbolos:**
+    * `X`: Mina (solo visible al perder).
+    * `V`: Casilla vacía seleccionada.
+    * `#`: Casilla cubierta.
+    * `F`: Bandera (posible mina).
+
+### Controles
+Durante la partida, el sistema solicitará ingresar una acción y una coordenada.
+
+**Ejemplo de entrada:**
+```text
+Ingrese coordenada (ej. A5): B3
+¿Desea marcar bandera? (S/N): N
