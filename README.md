@@ -59,7 +59,7 @@ El tablero se muestra con coordenadas:
     * `F`: Bandera (posible mina).
 
 ### Controles
-Durante la partida, el sistema solicitará ingresar una acción y una coordenada.
+Durante la partida, el sistema solicitará ingresar una acción y una coordenada..
 
 **Ejemplo de entrada:**
 ```text
