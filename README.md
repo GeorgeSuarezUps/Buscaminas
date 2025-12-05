@@ -9,7 +9,7 @@ Este proyecto es una implementación del clásico juego **Buscaminas** desarroll
 
 El juego consiste en un tablero de **10x10 casillas** con **10 minas** ocultas. El jugador debe descubrir las casillas seguras mediante coordenadas y lógica, evitando detonar las minas.
 
-## 🚀 Características Técnicas
+## 🚀 Características Técnicas.
 
 El desarrollo cumple con los siguientes requerimientos técnicos y de diseño:
 
